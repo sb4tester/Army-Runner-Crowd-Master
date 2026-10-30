@@ -1,0 +1,910 @@
+{
+  "version": 1,
+  "levels": [
+    {
+      "id": 1,
+      "name": "Level 1",
+      "speed": 7,
+      "trackWidth": 10,
+      "gateValues": [
+        "+2",
+        "+3",
+        "x2",
+        "+5"
+      ],
+      "obstaclesCount": 4,
+      "movingObstacles": false,
+      "enemyPower": 11,
+      "distance": 668
+    },
+    {
+      "id": 2,
+      "name": "Level 2",
+      "speed": 7.22,
+      "trackWidth": 10,
+      "gateValues": [
+        "+2",
+        "+3",
+        "x2",
+        "+5"
+      ],
+      "obstaclesCount": 5,
+      "movingObstacles": false,
+      "enemyPower": 14,
+      "distance": 686
+    },
+    {
+      "id": 3,
+      "name": "Level 3",
+      "speed": 7.44,
+      "trackWidth": 10,
+      "gateValues": [
+        "+2",
+        "+3",
+        "x2",
+        "+5"
+      ],
+      "obstaclesCount": 6,
+      "movingObstacles": false,
+      "enemyPower": 17,
+      "distance": 704
+    },
+    {
+      "id": 4,
+      "name": "Level 4",
+      "speed": 7.66,
+      "trackWidth": 10,
+      "gateValues": [
+        "+2",
+        "+3",
+        "x2",
+        "+5"
+      ],
+      "obstaclesCount": 7,
+      "movingObstacles": false,
+      "enemyPower": 20,
+      "distance": 722
+    },
+    {
+      "id": 5,
+      "name": "Level 5",
+      "speed": 7.88,
+      "trackWidth": 10,
+      "gateValues": [
+        "+2",
+        "+3",
+        "x2",
+        "+5"
+      ],
+      "obstaclesCount": 8,
+      "movingObstacles": false,
+      "enemyPower": 23,
+      "distance": 740
+    },
+    {
+      "id": 6,
+      "name": "Level 6",
+      "speed": 8.1,
+      "trackWidth": 10,
+      "gateValues": [
+        "+3",
+        "x2",
+        "-2",
+        "+5"
+      ],
+      "obstaclesCount": 9,
+      "movingObstacles": false,
+      "enemyPower": 26,
+      "distance": 758
+    },
+    {
+      "id": 7,
+      "name": "Level 7",
+      "speed": 8.32,
+      "trackWidth": 10,
+      "gateValues": [
+        "+3",
+        "x2",
+        "-2",
+        "+5"
+      ],
+      "obstaclesCount": 10,
+      "movingObstacles": false,
+      "enemyPower": 29,
+      "distance": 776
+    },
+    {
+      "id": 8,
+      "name": "Level 8",
+      "speed": 8.54,
+      "trackWidth": 10,
+      "gateValues": [
+        "+3",
+        "x2",
+        "-2",
+        "+5"
+      ],
+      "obstaclesCount": 11,
+      "movingObstacles": false,
+      "enemyPower": 32,
+      "distance": 794
+    },
+    {
+      "id": 9,
+      "name": "Level 9",
+      "speed": 8.76,
+      "trackWidth": 10,
+      "gateValues": [
+        "+3",
+        "x2",
+        "-2",
+        "+5"
+      ],
+      "obstaclesCount": 12,
+      "movingObstacles": false,
+      "enemyPower": 35,
+      "distance": 812
+    },
+    {
+      "id": 10,
+      "name": "Level 10",
+      "speed": 8.98,
+      "trackWidth": 10,
+      "gateValues": [
+        "+3",
+        "x2",
+        "-2",
+        "+5"
+      ],
+      "obstaclesCount": 13,
+      "movingObstacles": false,
+      "enemyPower": 38,
+      "distance": 830
+    },
+    {
+      "id": 11,
+      "name": "Level 11",
+      "speed": 9.2,
+      "trackWidth": 9,
+      "gateValues": [
+        "+5",
+        "x2",
+        "-3",
+        "÷2",
+        "+8",
+        "-5"
+      ],
+      "obstaclesCount": 14,
+      "movingObstacles": false,
+      "enemyPower": 45,
+      "distance": 848
+    },
+    {
+      "id": 12,
+      "name": "Level 12",
+      "speed": 9.48,
+      "trackWidth": 8.92,
+      "gateValues": [
+        "+5",
+        "x2",
+        "-3",
+        "÷2",
+        "+8",
+        "-5"
+      ],
+      "obstaclesCount": 16,
+      "movingObstacles": false,
+      "enemyPower": 52,
+      "distance": 866
+    },
+    {
+      "id": 13,
+      "name": "Level 13",
+      "speed": 9.76,
+      "trackWidth": 8.84,
+      "gateValues": [
+        "+5",
+        "x2",
+        "-3",
+        "÷2",
+        "+8",
+        "-5"
+      ],
+      "obstaclesCount": 18,
+      "movingObstacles": false,
+      "enemyPower": 59,
+      "distance": 884
+    },
+    {
+      "id": 14,
+      "name": "Level 14",
+      "speed": 10.04,
+      "trackWidth": 8.76,
+      "gateValues": [
+        "+5",
+        "x2",
+        "-3",
+        "÷2",
+        "+8",
+        "-5"
+      ],
+      "obstaclesCount": 20,
+      "movingObstacles": false,
+      "enemyPower": 66,
+      "distance": 902
+    },
+    {
+      "id": 15,
+      "name": "Level 15",
+      "speed": 10.32,
+      "trackWidth": 8.68,
+      "gateValues": [
+        "+5",
+        "x2",
+        "-3",
+        "÷2",
+        "+8",
+        "-5"
+      ],
+      "obstaclesCount": 22,
+      "movingObstacles": false,
+      "enemyPower": 73,
+      "distance": 920
+    },
+    {
+      "id": 16,
+      "name": "Level 16",
+      "speed": 10.6,
+      "trackWidth": 8.6,
+      "gateValues": [
+        "+5",
+        "x2",
+        "-3",
+        "÷2",
+        "+8",
+        "-5"
+      ],
+      "obstaclesCount": 24,
+      "movingObstacles": false,
+      "enemyPower": 80,
+      "distance": 938
+    },
+    {
+      "id": 17,
+      "name": "Level 17",
+      "speed": 10.88,
+      "trackWidth": 8.52,
+      "gateValues": [
+        "+5",
+        "x2",
+        "-3",
+        "÷2",
+        "+8",
+        "-5"
+      ],
+      "obstaclesCount": 26,
+      "movingObstacles": false,
+      "enemyPower": 87,
+      "distance": 956
+    },
+    {
+      "id": 18,
+      "name": "Level 18",
+      "speed": 11.16,
+      "trackWidth": 8.44,
+      "gateValues": [
+        "+5",
+        "x2",
+        "-3",
+        "÷2",
+        "+8",
+        "-5"
+      ],
+      "obstaclesCount": 28,
+      "movingObstacles": false,
+      "enemyPower": 94,
+      "distance": 974
+    },
+    {
+      "id": 19,
+      "name": "Level 19",
+      "speed": 11.44,
+      "trackWidth": 8.36,
+      "gateValues": [
+        "+5",
+        "x2",
+        "-3",
+        "÷2",
+        "+8",
+        "-5"
+      ],
+      "obstaclesCount": 30,
+      "movingObstacles": false,
+      "enemyPower": 101,
+      "distance": 992
+    },
+    {
+      "id": 20,
+      "name": "Level 20",
+      "speed": 11.72,
+      "trackWidth": 8.28,
+      "gateValues": [
+        "+5",
+        "x2",
+        "-3",
+        "÷2",
+        "+8",
+        "-5"
+      ],
+      "obstaclesCount": 32,
+      "movingObstacles": false,
+      "enemyPower": 108,
+      "distance": 1010
+    },
+    {
+      "id": 21,
+      "name": "Level 21",
+      "speed": 12,
+      "trackWidth": 8.2,
+      "gateValues": [
+        "+5",
+        "x2",
+        "-3",
+        "÷2",
+        "+8",
+        "-5"
+      ],
+      "obstaclesCount": 34,
+      "movingObstacles": false,
+      "enemyPower": 115,
+      "distance": 1028
+    },
+    {
+      "id": 22,
+      "name": "Level 22",
+      "speed": 12.28,
+      "trackWidth": 8.12,
+      "gateValues": [
+        "+5",
+        "x2",
+        "-3",
+        "÷2",
+        "+8",
+        "-5"
+      ],
+      "obstaclesCount": 36,
+      "movingObstacles": false,
+      "enemyPower": 122,
+      "distance": 1046
+    },
+    {
+      "id": 23,
+      "name": "Level 23",
+      "speed": 12.56,
+      "trackWidth": 8.04,
+      "gateValues": [
+        "+5",
+        "x2",
+        "-3",
+        "÷2",
+        "+8",
+        "-5"
+      ],
+      "obstaclesCount": 38,
+      "movingObstacles": false,
+      "enemyPower": 129,
+      "distance": 1064
+    },
+    {
+      "id": 24,
+      "name": "Level 24",
+      "speed": 12.84,
+      "trackWidth": 7.96,
+      "gateValues": [
+        "+5",
+        "x2",
+        "-3",
+        "÷2",
+        "+8",
+        "-5"
+      ],
+      "obstaclesCount": 40,
+      "movingObstacles": false,
+      "enemyPower": 136,
+      "distance": 1082
+    },
+    {
+      "id": 25,
+      "name": "Level 25",
+      "speed": 13.12,
+      "trackWidth": 7.88,
+      "gateValues": [
+        "+5",
+        "x2",
+        "-3",
+        "÷2",
+        "+8",
+        "-5"
+      ],
+      "obstaclesCount": 42,
+      "movingObstacles": false,
+      "enemyPower": 143,
+      "distance": 1100
+    },
+    {
+      "id": 26,
+      "name": "Level 26",
+      "speed": 13.4,
+      "trackWidth": 7.8,
+      "gateValues": [
+        "+8",
+        "x2",
+        "-8",
+        "÷2",
+        "+12",
+        "-10",
+        "x3"
+      ],
+      "obstaclesCount": 45,
+      "movingObstacles": true,
+      "enemyPower": 160,
+      "distance": 1118
+    },
+    {
+      "id": 27,
+      "name": "Level 27",
+      "speed": 13.72,
+      "trackWidth": 7.7,
+      "gateValues": [
+        "+8",
+        "x2",
+        "-8",
+        "÷2",
+        "+12",
+        "-10",
+        "x3"
+      ],
+      "obstaclesCount": 48,
+      "movingObstacles": true,
+      "enemyPower": 178,
+      "distance": 1136
+    },
+    {
+      "id": 28,
+      "name": "Level 28",
+      "speed": 14.04,
+      "trackWidth": 7.6,
+      "gateValues": [
+        "+8",
+        "x2",
+        "-8",
+        "÷2",
+        "+12",
+        "-10",
+        "x3"
+      ],
+      "obstaclesCount": 51,
+      "movingObstacles": true,
+      "enemyPower": 196,
+      "distance": 1154
+    },
+    {
+      "id": 29,
+      "name": "Level 29",
+      "speed": 14.36,
+      "trackWidth": 7.5,
+      "gateValues": [
+        "+8",
+        "x2",
+        "-8",
+        "÷2",
+        "+12",
+        "-10",
+        "x3"
+      ],
+      "obstaclesCount": 54,
+      "movingObstacles": true,
+      "enemyPower": 214,
+      "distance": 1172
+    },
+    {
+      "id": 30,
+      "name": "Level 30",
+      "speed": 14.68,
+      "trackWidth": 7.4,
+      "gateValues": [
+        "+8",
+        "x2",
+        "-8",
+        "÷2",
+        "+12",
+        "-10",
+        "x3"
+      ],
+      "obstaclesCount": 57,
+      "movingObstacles": true,
+      "enemyPower": 232,
+      "distance": 1190
+    },
+    {
+      "id": 31,
+      "name": "Level 31",
+      "speed": 15,
+      "trackWidth": 7.3,
+      "gateValues": [
+        "+8",
+        "x2",
+        "-8",
+        "÷2",
+        "+12",
+        "-10",
+        "x3"
+      ],
+      "obstaclesCount": 60,
+      "movingObstacles": true,
+      "enemyPower": 250,
+      "distance": 1208
+    },
+    {
+      "id": 32,
+      "name": "Level 32",
+      "speed": 15.32,
+      "trackWidth": 7.2,
+      "gateValues": [
+        "+8",
+        "x2",
+        "-8",
+        "÷2",
+        "+12",
+        "-10",
+        "x3"
+      ],
+      "obstaclesCount": 63,
+      "movingObstacles": true,
+      "enemyPower": 268,
+      "distance": 1226
+    },
+    {
+      "id": 33,
+      "name": "Level 33",
+      "speed": 15.64,
+      "trackWidth": 7.1,
+      "gateValues": [
+        "+8",
+        "x2",
+        "-8",
+        "÷2",
+        "+12",
+        "-10",
+        "x3"
+      ],
+      "obstaclesCount": 66,
+      "movingObstacles": true,
+      "enemyPower": 286,
+      "distance": 1244
+    },
+    {
+      "id": 34,
+      "name": "Level 34",
+      "speed": 15.96,
+      "trackWidth": 7,
+      "gateValues": [
+        "+8",
+        "x2",
+        "-8",
+        "÷2",
+        "+12",
+        "-10",
+        "x3"
+      ],
+      "obstaclesCount": 69,
+      "movingObstacles": true,
+      "enemyPower": 304,
+      "distance": 1262
+    },
+    {
+      "id": 35,
+      "name": "Level 35",
+      "speed": 16.28,
+      "trackWidth": 6.9,
+      "gateValues": [
+        "+8",
+        "x2",
+        "-8",
+        "÷2",
+        "+12",
+        "-10",
+        "x3"
+      ],
+      "obstaclesCount": 72,
+      "movingObstacles": true,
+      "enemyPower": 322,
+      "distance": 1280
+    },
+    {
+      "id": 36,
+      "name": "Level 36",
+      "speed": 16.6,
+      "trackWidth": 6.8,
+      "gateValues": [
+        "+8",
+        "x2",
+        "-8",
+        "÷2",
+        "+12",
+        "-10",
+        "x3"
+      ],
+      "obstaclesCount": 75,
+      "movingObstacles": true,
+      "enemyPower": 340,
+      "distance": 1298
+    },
+    {
+      "id": 37,
+      "name": "Level 37",
+      "speed": 16.92,
+      "trackWidth": 6.7,
+      "gateValues": [
+        "+8",
+        "x2",
+        "-8",
+        "÷2",
+        "+12",
+        "-10",
+        "x3"
+      ],
+      "obstaclesCount": 78,
+      "movingObstacles": true,
+      "enemyPower": 358,
+      "distance": 1316
+    },
+    {
+      "id": 38,
+      "name": "Level 38",
+      "speed": 17.24,
+      "trackWidth": 6.6,
+      "gateValues": [
+        "+8",
+        "x2",
+        "-8",
+        "÷2",
+        "+12",
+        "-10",
+        "x3"
+      ],
+      "obstaclesCount": 81,
+      "movingObstacles": true,
+      "enemyPower": 376,
+      "distance": 1334
+    },
+    {
+      "id": 39,
+      "name": "Level 39",
+      "speed": 17.56,
+      "trackWidth": 6.5,
+      "gateValues": [
+        "+8",
+        "x2",
+        "-8",
+        "÷2",
+        "+12",
+        "-10",
+        "x3"
+      ],
+      "obstaclesCount": 84,
+      "movingObstacles": true,
+      "enemyPower": 394,
+      "distance": 1352
+    },
+    {
+      "id": 40,
+      "name": "Level 40",
+      "speed": 17.88,
+      "trackWidth": 6.4,
+      "gateValues": [
+        "+8",
+        "x2",
+        "-8",
+        "÷2",
+        "+12",
+        "-10",
+        "x3"
+      ],
+      "obstaclesCount": 87,
+      "movingObstacles": true,
+      "enemyPower": 412,
+      "distance": 1370
+    },
+    {
+      "id": 41,
+      "name": "Level 41",
+      "speed": 18.2,
+      "trackWidth": 6.3,
+      "gateValues": [
+        "+8",
+        "x2",
+        "-8",
+        "÷2",
+        "+12",
+        "-10",
+        "x3"
+      ],
+      "obstaclesCount": 90,
+      "movingObstacles": true,
+      "enemyPower": 430,
+      "distance": 1388
+    },
+    {
+      "id": 42,
+      "name": "Level 42",
+      "speed": 18.52,
+      "trackWidth": 6.2,
+      "gateValues": [
+        "+8",
+        "x2",
+        "-8",
+        "÷2",
+        "+12",
+        "-10",
+        "x3"
+      ],
+      "obstaclesCount": 93,
+      "movingObstacles": true,
+      "enemyPower": 448,
+      "distance": 1406
+    },
+    {
+      "id": 43,
+      "name": "Level 43",
+      "speed": 18.84,
+      "trackWidth": 6.1,
+      "gateValues": [
+        "+8",
+        "x2",
+        "-8",
+        "÷2",
+        "+12",
+        "-10",
+        "x3"
+      ],
+      "obstaclesCount": 96,
+      "movingObstacles": true,
+      "enemyPower": 466,
+      "distance": 1424
+    },
+    {
+      "id": 44,
+      "name": "Level 44",
+      "speed": 19.16,
+      "trackWidth": 6,
+      "gateValues": [
+        "+8",
+        "x2",
+        "-8",
+        "÷2",
+        "+12",
+        "-10",
+        "x3"
+      ],
+      "obstaclesCount": 99,
+      "movingObstacles": true,
+      "enemyPower": 484,
+      "distance": 1442
+    },
+    {
+      "id": 45,
+      "name": "Level 45",
+      "speed": 19.48,
+      "trackWidth": 5.9,
+      "gateValues": [
+        "+8",
+        "x2",
+        "-8",
+        "÷2",
+        "+12",
+        "-10",
+        "x3"
+      ],
+      "obstaclesCount": 102,
+      "movingObstacles": true,
+      "enemyPower": 502,
+      "distance": 1460
+    },
+    {
+      "id": 46,
+      "name": "Level 46",
+      "speed": 19.8,
+      "trackWidth": 5.8,
+      "gateValues": [
+        "+8",
+        "x2",
+        "-8",
+        "÷2",
+        "+12",
+        "-10",
+        "x3"
+      ],
+      "obstaclesCount": 105,
+      "movingObstacles": true,
+      "enemyPower": 520,
+      "distance": 1478
+    },
+    {
+      "id": 47,
+      "name": "Level 47",
+      "speed": 20.12,
+      "trackWidth": 5.7,
+      "gateValues": [
+        "+8",
+        "x2",
+        "-8",
+        "÷2",
+        "+12",
+        "-10",
+        "x3"
+      ],
+      "obstaclesCount": 108,
+      "movingObstacles": true,
+      "enemyPower": 538,
+      "distance": 1496
+    },
+    {
+      "id": 48,
+      "name": "Level 48",
+      "speed": 20.44,
+      "trackWidth": 5.6,
+      "gateValues": [
+        "+8",
+        "x2",
+        "-8",
+        "÷2",
+        "+12",
+        "-10",
+        "x3"
+      ],
+      "obstaclesCount": 111,
+      "movingObstacles": true,
+      "enemyPower": 556,
+      "distance": 1514
+    },
+    {
+      "id": 49,
+      "name": "Level 49",
+      "speed": 20.76,
+      "trackWidth": 5.5,
+      "gateValues": [
+        "+8",
+        "x2",
+        "-8",
+        "÷2",
+        "+12",
+        "-10",
+        "x3"
+      ],
+      "obstaclesCount": 114,
+      "movingObstacles": true,
+      "enemyPower": 574,
+      "distance": 1532
+    },
+    {
+      "id": 50,
+      "name": "Level 50",
+      "speed": 21.08,
+      "trackWidth": 5.4,
+      "gateValues": [
+        "+8",
+        "x2",
+        "-8",
+        "÷2",
+        "+12",
+        "-10",
+        "x3"
+      ],
+      "obstaclesCount": 117,
+      "movingObstacles": true,
+      "enemyPower": 592,
+      "distance": 1550
+    }
+  ]
+}
