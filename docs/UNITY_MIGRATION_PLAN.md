@@ -1,83 +1,57 @@
 # Unity Migration and Architecture Plan
 
-**Status:** Approved plan; no Unity project or gameplay code has been created yet.
+**Status:** Phase 1 Unity scaffold committed; local Editor verification pending.
 
 ## 1. Migration approach
 
-The current repository contains an early Three.js/Vite prototype and documentation. Treat it as a gameplay reference and data source, not as code that can be mechanically converted into Unity C#.
+The repository contains an early Three.js/Vite prototype and a new Unity project scaffold. Treat the original prototype as a gameplay reference and data source, not as code that can be mechanically converted into Unity C#.
 
-- Preserve the existing prototype until the Unity baseline is accepted.
-- Do not delete or overwrite the Three.js prototype during the migration.
-- Create the Unity project in a clearly separated directory (proposed: `UnityProject/`) or a dedicated branch after confirming repository size and Git LFS needs.
-- Migrate the 50 level definitions through an explicit schema mapping and validation tool.
-- Keep the original JSON as a source/reference until the Unity level pipeline is verified.
+- Preserve the original Three.js/Vite prototype; do not delete or overwrite it during migration.
+- The Unity project lives in UnityProject/.
+- The original 50-level JSON remains at public/data/levels.json and has been copied to Unity Resources at UnityProject/Assets/Resources/ArmyRunner/levels.json.
+- Runtime data loading uses Resources so the level catalog can be included in native and Web builds.
+- Continue migrating functionality in small verified stages.
 
 ## 2. Unity project baseline
 
-At implementation time, select the latest suitable supported Unity LTS release and pin the exact editor version in `ProjectSettings/ProjectVersion.txt`. Do not upgrade editor or package versions without a recorded change.
+- Editor: Unity 6.3 LTS, pinned to 6000.3.27f1.
+- Render pipeline: Universal Render Pipeline (URP), package 17.3.0.
+- Input: Unity Input System 1.18.0.
+- Tests: Unity Test Framework 1.4.6.
+- Runtime scripts are grouped under the ArmyRunner.Runtime assembly definition.
+- EditMode tests use a separate test assembly.
 
-Recommended baseline:
-- Universal Render Pipeline (URP) for scalable rendering across mobile, desktop, and supported consoles.
-- Unity Input System package for touch, pointer, keyboard, and gamepad.
-- TextMeshPro for readable UI.
-- ScriptableObjects for runtime-ready level data; optional JSON import/export for authoring and automated validation.
-- Assembly definitions to separate core gameplay, presentation, platform adapters, and tests.
-- Unity Test Framework for EditMode and PlayMode tests.
+Do not upgrade editor or package versions without recording the change and re-running platform tests.
 
-Package selection must be verified against the exact pinned Unity version and every intended target platform before adoption.
+## 3. Project organization
 
-## 3. Proposed code organization
+The initial scaffold uses:
 
-```text
-UnityProject/
-  Assets/
-    ArmyRunner/
-      Art/
-      Audio/
-      Materials/
-      Prefabs/
-      Scenes/
-      ScriptableObjects/
-      UI/
-      VFX/
-      Scripts/
-        Core/
-        Gameplay/
-        Crowd/
-        Gates/
-        Obstacles/
-        Combat/
-        Input/
-        Progression/
-        Save/
-        Audio/
-        UI/
-        Platform/
-          Ads/
-          IAP/
-          Saves/
-          Console/
-        Utilities/
-      Tests/
-        EditMode/
-        PlayMode/
-  Packages/
-  ProjectSettings/
-```
+- Assets/ArmyRunner/Editor — project setup wizard.
+- Assets/ArmyRunner/Scripts/Core — bootstrap and game state.
+- Assets/ArmyRunner/Scripts/Gameplay — level catalog and domain logic.
+- Assets/ArmyRunner/Scripts/Input — platform-neutral runner movement.
+- Assets/ArmyRunner/Scripts/Crowd — logical crowd count.
+- Assets/ArmyRunner/Scripts/Gates — gate trigger behavior.
+- Assets/ArmyRunner/Scripts/Camera — follow camera.
+- Assets/ArmyRunner/Scripts/Tests/EditMode — unit tests.
+- Assets/Resources/ArmyRunner — runtime level JSON.
+
+Future systems should be added under dedicated folders for Obstacles, Combat, Progression, Save, Audio, UI, and Platform adapters.
 
 ## 4. Runtime boundaries
 
 ### Core gameplay
-Owns the runner state, crowd count, gate resolution, obstacle effects, combat calculation, level completion, and progression events. It must not call platform SDKs directly.
+Owns runner state, crowd count, gate resolution, obstacle effects, combat calculation, level completion, and progression events. It must not call platform SDKs directly.
 
 ### Input
-Expose normalized gameplay actions such as MoveHorizontal, Pause, Confirm, and Back. Platform-specific input bindings map to these actions.
+Expose normalized gameplay actions such as horizontal movement, pause, confirm, and back. Platform-specific devices map to these actions.
 
 ### Level data
 Use a versioned schema with stable IDs, deterministic spawn positions, gate alternatives, obstacle definitions, enemy strength, and difficulty metadata. Validate values before a level can be loaded.
 
 ### Save
-Use a versioned save model with current level, highest unlocked level, settings, and owned local cosmetic selections. Write atomically where possible, handle corrupted data, and retain safe defaults. Do not store payment credentials or sensitive personal data.
+Use a versioned save model with current level, highest unlocked level, and settings. Handle corrupted data and safe defaults. Do not store payment credentials or sensitive personal data.
 
 ### Platform services
 Define interfaces such as IAdsService, IStoreService, IPlatformSaveService, and IPlatformCapabilities. Provide no-op or unsupported implementations when a platform does not support a service.
@@ -89,35 +63,27 @@ Define interfaces such as IAdsService, IStoreService, IPlatformSaveService, and 
 - Use pooling, GPU instancing, LOD, simplified distant formations, and batched animation where appropriate.
 - Establish a configurable visual cap while preserving the correct logical crowd count.
 - Profile on representative low/mid-range mobile hardware before increasing visual complexity.
-- Avoid assuming that a high-end desktop result predicts WebGL or mobile performance.
 
-## 6. Data migration
+## 6. Migration phases
 
-1. Read and archive the existing `public/data/levels.json`.
-2. Document the current fields and semantics.
-3. Define a versioned Unity level schema.
-4. Write a conversion/validation step; do not silently drop unknown fields.
-5. Convert all 50 levels.
-6. Compare IDs, gate operations, values, obstacle placements, and enemy strengths.
-7. Add tests for invalid operations, bounds, missing IDs, and duplicate IDs.
-8. Keep the source JSON until migration acceptance.
+- M0: inspect and baseline the existing repository — complete.
+- M1: create Unity LTS project scaffold and pin packages/editor version — scaffold committed; Editor verification pending.
+- M2: implement core state model and input abstraction — initial foundation committed; continue hardening.
+- M3: import and validate all 50 levels — JSON copied; automated Unity-side validation must be run.
+- M4: implement full runner, gate pairs, obstacles, crowd visuals, and combat — next development stage.
+- M5: implement UI, audio, save, and progression — partially scaffolded; continue.
+- M6: add optional ad and IAP adapters — not started.
+- M7: add platform build profiles and automated smoke checks — not started.
 
-## 7. Migration phases
-
-- M0: inspect and baseline the existing repository.
-- M1: create an empty Unity LTS project and pin packages/editor version.
-- M2: implement core state model and input abstraction.
-- M3: import and validate all 50 levels.
-- M4: implement runner, gates, obstacles, crowd, and combat.
-- M5: implement UI, audio, save, and progression.
-- M6: add optional ad and IAP adapters.
-- M7: add platform build profiles and automated smoke checks where feasible.
-
-## 8. Engineering safeguards
+## 7. Engineering safeguards
 
 - Keep Unity-generated caches and machine-specific files out of Git.
 - Use Git LFS for large binary assets when repository size warrants it.
 - Never commit signing keys, store credentials, API secrets, or private console SDK files.
 - Document licenses and attribution for every third-party asset and package.
-- Require review of package licenses, privacy disclosures, and SDK data collection before release.
-- Keep platform-specific code behind compile-time/platform boundaries and runtime capability checks.
+- Review package licenses, privacy disclosures, and SDK data collection before release.
+- Keep platform-specific code behind interfaces and runtime capability checks.
+
+## 8. Verification boundary
+
+The GitHub scaffold is not evidence of a successful Unity import or build. Unity Editor import, Package Manager resolution, scene wizard execution, EditMode tests, Play Mode, and target builds remain to be run locally.
