@@ -1,0 +1,7 @@
+export class AudioManager {
+ constructor({enabled=true}={}){this.enabled=enabled;this.ctx=null;this.master=null;}
+ setEnabled(value){this.enabled=Boolean(value);if(this.master)this.master.gain.value=this.enabled?0.35:0;}
+ ensureContext(){if(!this.ctx){const C=globalThis.AudioContext||globalThis.webkitAudioContext;if(!C)return null;this.ctx=new C();this.master=this.ctx.createGain();this.master.gain.value=this.enabled?0.35:0;this.master.connect(this.ctx.destination);}if(this.ctx.state==='suspended')this.ctx.resume();return this.ctx;}
+ tone(freq,duration=.12,type='sine',endFreq=freq,volume=.25){if(!this.enabled)return;const c=this.ensureContext();if(!c)return;const o=c.createOscillator(),g=c.createGain(),now=c.currentTime;o.type=type;o.frequency.setValueAtTime(freq,now);o.frequency.exponentialRampToValueAtTime(Math.max(1,endFreq),now+duration);g.gain.setValueAtTime(volume,now);g.gain.exponentialRampToValueAtTime(.001,now+duration);o.connect(g);g.connect(this.master);o.start(now);o.stop(now+duration);}
+ play(name){switch(name){case'gatePlus':this.tone(520,.12,'sine',880);break;case'gateMultiply':this.tone(440,.2,'triangle',1100);break;case'gateMinus':this.tone(360,.16,'sawtooth',180,.16);break;case'obstacle':this.tone(180,.18,'square',75,.18);break;case'combat':this.tone(130,.3,'sawtooth',65,.2);break;case'win':this.tone(523,.35,'sine',1046);setTimeout(()=>this.tone(659,.35),110);setTimeout(()=>this.tone(784,.5),220);break;case'lose':this.tone(300,.5,'triangle',90);break;}}
+}

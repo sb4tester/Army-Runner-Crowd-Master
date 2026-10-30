@@ -1,0 +1,10 @@
+import {LevelManager} from './systems/LevelManager.js';
+import {SaveManager} from './systems/SaveManager.js';
+import {AudioManager} from './systems/AudioManager.js';
+import {Game} from './game/Game.js';
+const $=id=>document.getElementById(id),save=new SaveManager(),state=save.load(),audio=new AudioManager({enabled:state.soundEnabled}),levels=new LevelManager();let game;
+async function boot(){await levels.load();const initial=Math.min(state.currentLevel,levels.totalLevels);levels.setCurrentLevel(Math.min(initial,state.unlockedLevel));game=new Game($('game'),{onUnits:n=>$('unitCount').textContent=n,onProgress:p=>$('progress').style.width=(p*100)+'%',onSound:s=>audio.play(s),onFinish:finish});$('menuLevel').textContent='ด่าน '+levels.currentLevelId+' / '+levels.totalLevels;$('startBtn').onclick=startLevel;$('resultBtn').onclick=advanceOrRetry;$('soundToggle').onclick=()=>{const enabled=!audio.enabled;audio.setEnabled(enabled);save.setSoundEnabled(enabled);$('soundToggle').textContent=enabled?'🔊':'🔇';};$('soundToggle').textContent=audio.enabled?'🔊':'🔇';}
+function startLevel(){const l=levels.getLevel();$('menu').classList.add('hidden');$('result').classList.add('hidden');$('hud').style.display='flex';$('levelLabel').textContent=l.name.toUpperCase();$('progress').style.width='0';save.setCurrentLevel(l.id);game.setLevel(l);game.start();}
+function finish(result){$('hud').style.display='none';audio.play(result.won?'win':'lose');$('resultTitle').textContent=result.won?'ชนะแล้ว! 🎉':'แพ้แล้ว';$('resultText').textContent='ทีมคุณ '+result.units+' คน / ศัตรู '+result.enemyPower+' คน';if(result.won){const next=levels.currentLevelId+1;if(levels.levels.has(next)){save.unlockLevel(next);$('resultBtn').textContent='ด่านถัดไป';}else{$('resultBtn').textContent='จบเกม / เริ่มใหม่';}}else{$('resultBtn').textContent='ลองอีกครั้ง';} $('result').classList.remove('hidden');}
+function advanceOrRetry(){const s=save.load();if(s.unlockedLevel>levels.currentLevelId){levels.setCurrentLevel(s.unlockedLevel);}else if(levels.isLastLevel){levels.setCurrentLevel(1);save.reset();}startLevel();}
+boot().catch(e=>{console.error(e);alert('โหลดเกมไม่สำเร็จ: '+e.message);});
